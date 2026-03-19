@@ -70,6 +70,14 @@ as this breakdown was not reported separately before that year.
 and mapped into the Exchange Gain column to maintain a consistent 
 structure across all years.
 
+5. **Net Share of Ecology** will be used as the standard Ecology 
+column. For 2023 files where this column is labelled Total Ecology 
+Fund, it will be mapped to Net Share of Ecology during cleaning. 
+This means 7 Niger Delta states in 2023 may show a slight 
+overstatement as the NDDC transfer deduction is not reflected. 
+For pre-2022 files this column will be null as Ecology was not 
+reported separately before that year.
+
 ## Final Clean Table Structure
 The combined clean dataset will contain the following 10 columns:
 
@@ -82,6 +90,6 @@ The combined clean dataset will contain the following 10 columns:
 | Deduction                | Null where missing                 |
 | Exchange Gain            | Includes mapped 2021 FOREX data    |
 | EMTL                     | Null for pre-2023 files            |
-| Ecology Fund             | Null for pre-2022 files            |
+| Net Share of Ecology             | Null for pre-2022 files            |
 | VAT                      | Consistent across all years        |
 | Total Allocation         | Final total per state per month    |
