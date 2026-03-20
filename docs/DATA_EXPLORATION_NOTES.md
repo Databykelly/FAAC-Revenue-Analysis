@@ -15,19 +15,21 @@ as State Details. It contains one row per state and covers all the
 key revenue components needed to answer the 6 business questions.
 
 ## Sheet Name Changes Across Years
-The SumSum sheet is not consistently named across files. The exact 
-name per year is as follows:
+The SumSum sheet is not consistently named across files. 
+Phase 1 exploration covered 6 sample files. Full investigation 
+across all 59 files in Power Query revealed additional variants:
 
-| Year      | Sheet Name |
-|-----------|------------|
-| 2020      | sumsum / SUM / Sum Sum / SUM SUM |
-| 2021      | Sum Sum / SumSum |
-| 2022      | Sumsum / SumSum |
-| 2023      | SumSum / Sumsum |
-| 2024      | SumSum / Sum / Summary |
+| Year | Sheet Name Variants Found |
+|------|--------------------------|
+| 2020 | sumsum, Sum Sum, SUM SUM, SUM |
+| 2021 | Sum Sum, SumSum |
+| 2022 | Sumsum, SumSum |
+| 2023 | SumSum, Sumsum |
+| 2024 | SumSum, Sum, Summary |
 
-This inconsistency must be handled in Power Query before combining 
-the files.
+Power Query handles all variants using Text.Lower() to convert 
+every sheet name to lowercase before matching, ensuring SumSum, 
+SUMSUM, sumsum and all other cases are treated identically.
 
 ## Column Structure by Year
 The following columns appear consistently across most or all years:
