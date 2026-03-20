@@ -20,12 +20,11 @@ name per year is as follows:
 
 | Year      | Sheet Name |
 |-----------|------------|
-| 2020      | sumsum     |
-| 2021      | Sum Sum    |
-| 2022      | Sumsum     |
-| 2023      | SumSum     |
-| 2024      | SumSum     |
-| July 2024 | Sum        |
+| 2020      | sumsum / SUM / Sum Sum / SUM SUM |
+| 2021      | Sum Sum / SumSum |
+| 2022      | Sumsum / SumSum |
+| 2023      | SumSum / Sumsum |
+| 2024      | SumSum / Sum / Summary |
 
 This inconsistency must be handled in Power Query before combining 
 the files.
@@ -78,18 +77,26 @@ overstatement as the NDDC transfer deduction is not reflected.
 For pre-2022 files this column will be null as Ecology was not 
 reported separately before that year.
 
+6. **10 files do not contain a SumSum sheet** and are excluded from 
+the combined dataset. These are: March, April, May, June, July, 
+August, September, and November 2021, plus April 2024 and September 
+2024. For these files the state level summary exists in SG Details 
+or State Details but extracting from a different sheet per file adds 
+unsustainable complexity. These months are documented as a data 
+limitation.
+
 ## Final Clean Table Structure
 The combined clean dataset will contain the following 10 columns:
 
-| Column                   | Notes                              |
-|--------------------------|------------------------------------|
-| Year                     | Extracted from filename            |
-| Month                    | Extracted from filename            |
-| State                    | Standardised name across all years |
-| Gross Statutory Allocation | Null for 2023 SumSum files       |
-| Deduction                | Null where missing                 |
-| Exchange Gain            | Includes mapped 2021 FOREX data    |
-| EMTL                     | Null for pre-2023 files            |
-| Net Share of Ecology             | Null for pre-2022 files            |
-| VAT                      | Consistent across all years        |
-| Total Allocation         | Final total per state per month    |
+| Column                     | Notes                              |
+|----------------------------|------------------------------------|
+| Year                       | Extracted from filename            |
+| Month                      | Extracted from filename            |
+| State                      | Standardised name across all years |
+| Gross Statutory Allocation | Null for 2023 SumSum files         |
+| Deduction                  | Null where missing                 |
+| Exchange Gain              | Includes mapped 2021 FOREX data    |
+| EMTL                       | Null for pre-2023 files            |
+| Net Share of Ecology       | Null for pre-2022 files            |
+| VAT                        | Consistent across all years        |
+| Total Allocation           | Final total per state per month    |
