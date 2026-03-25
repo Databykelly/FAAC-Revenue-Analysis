@@ -15,7 +15,7 @@ economic exposure.
 6. How did external shocks affect allocations?
 
 ## Tools
-Power Query · MySQL 8.0 · Power BI · GitHub
+Power Query · MySQL 8.0 · Power BI · GitHub · Python
 
 ## Data Source
 National Bureau of Statistics Nigeria — nigerianstat.gov.ng
